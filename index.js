@@ -1,3 +1,5 @@
+const MATRICS = ["з-с-ц", "л", "п-б", "т-д", "ч-ш-щ-ж", "ф,в", "Н", "м", "к,х,г,ґ", "р"];
+
 const letters = [
   {
     num: 1,
@@ -40,16 +42,32 @@ const letters = [
     letters: "з,с,ц",
   },
 ];
-for (let index = 0; index <= 20; index++) {
-  if (index > 9) {
-    const newItem = {
-      num: index,
-      leters: "a",
-    };
-    letters.push(newItem);
-    // console.log(newItem);
-  }
+
+const numberOfWords = 20;
+for (let index = 10; index <= numberOfWords; index++) {
+  const l = convertNumToString(index);
+  const newItem = {
+    num: index,
+    leters: l,
+  };
+  letters.push(newItem);
+  // console.log(newItem);
 
   const element = letters[index];
   console.log(element);
+}
+
+function convertNumToString(params) {
+  const a = params.toString().split("").map(Number);
+  const b = a.map((el, i, arr) => {
+    console.log(el);
+    console.log(MATRICS[i + 1].split());
+    return (el = MATRICS[el]);
+    console.log(arr);
+    // for (let index = 0; index < a.length; index++) {
+    //   a[index] = MATRICS[index];
+    // }
+  });
+  return b;
+  console.log(b);
 }
